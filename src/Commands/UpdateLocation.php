@@ -13,12 +13,13 @@ use Illuminate\Support\Str;
 class UpdateLocation extends Command
 {
     protected $name = 'local:update';
-    private CountryInterface $countryInterface;
-    private ProvinceInterface $provinceInterface;
-    private DistrictInterface $districtInterface;
-    private WardInterface $wardInterface;
-    public function __construct()
-    {
+
+    public function __construct(
+        private CountryInterface $countryInterface,
+        private ProvinceInterface $provinceInterface,
+        private DistrictInterface $districtInterface,
+        private WardInterface $wardInterface,
+    ) {
         parent::__construct();
     }
 
@@ -39,10 +40,6 @@ class UpdateLocation extends Command
      */
     public function handle(): int
     {
-        $this->countryInterface = app(CountryInterface::class);
-        $this->provinceInterface = app(ProvinceInterface::class);
-        $this->districtInterface = app(DistrictInterface::class);
-        $this->wardInterface = app(WardInterface::class);
         ($this->countryInterface->getModel())->query()->truncate();
         ($this->provinceInterface->getModel())->query()->truncate();
         ($this->districtInterface->getModel())->query()->truncate();
