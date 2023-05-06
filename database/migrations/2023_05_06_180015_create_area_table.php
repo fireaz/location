@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('local_area', function (Blueprint $table) {
             $table->id();
+            $table->integer('parent_id')->nullable();
             $table->string('code')->nullable();
             $table->string('parent_code')->nullable();
             $table->string('name')->nullable();

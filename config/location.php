@@ -1,6 +1,10 @@
 <?php
 
+use FireAZ\Location\Commands\UpdateLocation;
+
 return [
     'name' => 'location',
-    'commands' => []
+    'commands' => [
+        UpdateLocation::class
+    ]
 ];

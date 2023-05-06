@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class District extends Model
 {
     use HasFactory;
+    protected $table='local_district';
 
 
     /**
@@ -16,6 +17,7 @@ class District extends Model
      * @var string[]
      */
     protected $fillable = [
+        'parent_id',
         'code',
         'parent_code',
         'name',

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Ward extends Model
 {
     use HasFactory;
+    protected $table='local_ward';
 
     /**
      * The attributes that are mass assignable.
@@ -15,6 +16,7 @@ class Ward extends Model
      * @var string[]
      */
     protected $fillable = [
+        'parent_id',
         'code',
         'parent_code',
         'name',

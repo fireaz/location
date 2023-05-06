@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Country extends Model
 {
     use HasFactory;
+    protected $table='local_country';
 
     /**
      * The attributes that are mass assignable.
@@ -15,6 +16,7 @@ class Country extends Model
      * @var string[]
      */
     protected $fillable = [
+        'parent_id',
         'code',
         'parent_code',
         'name',

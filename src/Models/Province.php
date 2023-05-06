@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Province extends Model
 {
     use HasFactory;
+    protected $table='local_province';
 
     /**
      * The attributes that are mass assignable.
@@ -15,6 +16,7 @@ class Province extends Model
      * @var string[]
      */
     protected $fillable = [
+        'parent_id',
         'code',
         'parent_code',
         'name',
