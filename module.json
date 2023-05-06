@@ -1,0 +1,11 @@
+{
+    "id":"module-location-3c7e2aec-b247-451a-a7d2-9cb05b531ed24579625",
+    "name": "location",
+    "alias": "location",
+    "description": "",
+    "keywords": [],
+    "priority": 200,
+    "aliases": {},
+    "namespace":"FireAZ\\Location",
+    "requires": []
+}

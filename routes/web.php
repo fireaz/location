@@ -14,6 +14,6 @@
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
-Route::get('laravel-package-boilerplate', function () {
-    return 'laravel-package-boilerplate';
+Route::get('laravel-package-location', function () {
+    return 'laravel-package-location';
 });
