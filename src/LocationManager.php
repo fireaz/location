@@ -6,6 +6,7 @@ use FireAZ\Location\Repositories\Interfaces\CountryInterface;
 use FireAZ\Location\Repositories\Interfaces\DistrictInterface;
 use FireAZ\Location\Repositories\Interfaces\ProvinceInterface;
 use FireAZ\Location\Repositories\Interfaces\WardInterface;
+use Illuminate\Support\Facades\Cache;
 
 class LocationManager
 {
@@ -35,11 +36,13 @@ class LocationManager
     }
     public function GetJson()
     {
-        return [
-            'country' => $this->GetCountry(),
-            'province' => $this->GetProvince(),
-            'district' => $this->GetDistrict(),
-            'ward' => $this->GetWard()
-        ];
+        return Cache::rememberForever('location_json', function () {
+            return [
+                'country' => $this->GetCountry(),
+                'province' => $this->GetProvince(),
+                'district' => $this->GetDistrict(),
+                'ward' => $this->GetWard()
+            ];
+        });
     }
 }
