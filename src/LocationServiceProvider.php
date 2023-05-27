@@ -65,5 +65,9 @@ class LocationServiceProvider extends ServiceProvider
         $this->app->bind(WardInterface::class, function () {
             return new WardCacheDecorator(new WardRepositories(new Ward()));
         });
+        add_filter(PLATFORM_CONFIG_JS, function ($params) {
+            $params['locations'] = location_json();
+            return $params;
+        });
     }
 }

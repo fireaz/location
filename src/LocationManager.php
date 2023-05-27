@@ -19,20 +19,20 @@ class LocationManager
     }
     public function GetCountry()
     {
-        return $this->countryInterface->select(['parent_code', 'code', 'name_with_type'])->get();
+        return $this->countryInterface->select(['parent_code', 'code', 'name_with_type','path_with_type'])->get();
     }
     public function GetProvince()
     {
-        return $this->provinceInterface->select(['parent_code', 'code', 'name_with_type'])->get();
+        return $this->provinceInterface->select(['parent_code', 'code', 'name_with_type','path_with_type'])->get();
     }
     public function GetDistrict()
     {
-        return $this->districtInterface->select(['parent_code', 'code', 'name_with_type'])->get();
+        return $this->districtInterface->select(['parent_code', 'code', 'name_with_type','path_with_type'])->get();
     }
 
     public function GetWard()
     {
-        return $this->wardInterface->select(['parent_code', 'code', 'name_with_type'])->get();
+        return $this->wardInterface->select(['parent_code', 'code', 'name_with_type','path_with_type'])->get();
     }
     public function GetJson()
     {
